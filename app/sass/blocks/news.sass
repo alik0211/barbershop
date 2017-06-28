@@ -1,0 +1,106 @@
+@import "../vars"
+@import "../mixins"
+
+.news
+  color: #000
+  background-color: #f9f5f2
+
+.news__wrapper
+  @include container
+  padding: 40px 0
+  padding-top: 70px
+  border-bottom: 1px solid #e5ddd5
+
+.news__title
+  margin-top: 0
+  font-size: 30px
+  text-align: center
+  text-transform: uppercase
+
+.news__items
+  padding: 0
+  list-style: none
+
+.news__item
+  display: flex
+  position: relative
+  min-height: 70px
+  padding: 15px 0
+  margin-left: 70px
+
+  &:first-child
+    border-bottom: 1px solid #e5ddd5
+
+  &:last-child
+    display: none
+
+.news__date
+  position: absolute
+  display: block
+  left: -70px
+  top: 45px
+  margin-top: -25px
+  padding-top: 4px
+  width: 50px
+  height: 50px
+  text-align: center
+  line-height: 0.7
+  color: #fff
+  background: #000
+
+  &::after
+    content: ""
+    bottom: -35px
+    left: 0
+    width: 0
+    position: absolute
+    border: 25px solid transparent
+    border-top: 10px solid #000
+
+.news__number
+  font-size: 30px
+  line-height: 1
+
+.news__text
+  font-size: 18px
+  line-height: 1.5
+  margin: 0
+
+@media (min-width: $tablet)
+  .news__wrapper
+    padding: 75px 0
+    position: relative
+
+    .news__title
+      text-align: left
+      font-size: 40px
+
+    .news__to-all
+      position: absolute
+      top: 75px
+      right: 0
+
+    .news__items
+      display: flex
+
+    .news__item
+      padding-right: 30px
+
+      &:first-child
+        border-bottom: none
+
+@media (min-width: $desktop)
+  .news__wrapper
+    padding-top: 100px
+
+  .news__title
+    margin-left: 70px
+
+  .news__to-all
+    top: 100px
+
+  .news__item
+    padding-right: 30px
+
+    &:last-child
+      display: block

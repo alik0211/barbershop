@@ -1,0 +1,16 @@
+@import "../vars"
+@import "../mixins"
+
+.footer__wrapper
+  padding: 40px 0
+  color: #fff
+
+@media (min-width: $tablet)
+  .footer__wrapper
+    @include container
+    display: flex
+    flex-wrap: wrap
+
+@media (min-width: $desktop)
+  .footer__wrapper
+    padding: 60px 0

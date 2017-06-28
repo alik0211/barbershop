@@ -1,0 +1,69 @@
+@import "../vars"
+@import "../mixins"
+
+.social
+  margin-bottom: 20px
+
+.social__title
+  display: none
+
+.social__links
+  display: flex
+  font-size: 0
+
+.social__link
+  height: 100px
+  width: 33.33%
+  border: 1px solid #3e3e3e
+  background-repeat: no-repeat
+  background-position: 50% 50%
+
+  &:hover
+    border-color: #585858
+
+  &--vk
+    background-image: url(../images/vk-icon-big.png)
+
+  &--fb
+    background-image: url(../images/facebook-icon-big.png)
+
+  &--inst
+    background-image: url(../images/insta-icon-big.png)
+
+@media (min-width: $tablet)
+  .social
+    display: inline-block
+    order: 2
+    margin: 0
+    margin-top: 30px
+    width: 100%
+
+@media (min-width: $desktop)
+  .social
+    order: 1
+    margin: 0
+    width: 160px
+    width: 33.33%
+    text-align: center
+
+  .social__title
+    display: inline-block
+    font-size: 18px
+    margin-bottom: 15px
+
+  .social__links
+    justify-content: center
+
+  .social__link
+    width: 50px
+    height: 50px
+    margin-right: 5px
+
+    &--vk
+      background-size: auto 17px
+
+    &--fb
+      background-size: auto 21px
+
+    &--inst
+      background-size: auto 19px

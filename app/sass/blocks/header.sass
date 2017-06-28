@@ -1,0 +1,26 @@
+@import "../vars"
+
+.header
+  display: flex
+  flex-direction: column
+  background-color: #292929
+
+.header__logo
+  position: relative
+  padding: 25px 0
+  text-align: center
+
+@media (min-width: $tablet)
+  .header
+    flex-direction: column-reverse
+
+    background-image: url(../images/body-bg.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+
+  .header__logo
+    min-height: 400px
+
+@media (min-width: $desktop)
+  .header__logo
+    min-height: 650px
