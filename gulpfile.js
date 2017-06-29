@@ -1,12 +1,19 @@
-const gulp           = require('gulp'),
-      del            = require('del'),
-      sass           = require('gulp-sass'),
-      notify         = require("gulp-notify"),
-      cleanCSS       = require('gulp-clean-css'),
-      browserSync    = require('browser-sync'),
-      autoprefixer   = require('gulp-autoprefixer');
+const del          = require('del'),
+      gulp         = require('gulp'),
+      sass         = require('gulp-sass'),
+      babel        = require('gulp-babel'),
+      rename       = require('gulp-rename'),
+      notify       = require('gulp-notify'),
+      uglify       = require('gulp-uglify'),
+      useref       = require('gulp-useref'),
+      htmlmin      = require('gulp-htmlmin'),
+      cleanCSS     = require('gulp-clean-css'),
+      browserSync  = require('browser-sync'),
+      autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('browser-sync', function() {
+const reload = browserSync.reload;
+
+gulp.task('serve', function() {
   browserSync({
     server: {
       baseDir: 'app'
@@ -16,18 +23,53 @@ gulp.task('browser-sync', function() {
   });
 });
 
-gulp.task('sass', function() {
-  return gulp.src('app/sass/*.sass')
-           .pipe(sass()).on('error', notify.onError())
-           .pipe(autoprefixer(['last 10 versions']))
-          //  .pipe(cleanCSS())
-           .pipe(gulp.dest('app/css'));
+gulp.task('serve:dist', ['build'], function() {
+  browserSync({
+    server: {
+      baseDir: 'dist'
+    },
+    port: 9999,
+    notify: false
+  });
 });
 
-gulp.task('watch', ['browser-sync', 'sass'], function() {
-  gulp.watch('app/sass/**/*.sass', ['sass', browserSync.reload]);
-  gulp.watch('app/js/*.js', browserSync.reload);
-  gulp.watch('app/*.html', browserSync.reload);
+gulp.task('sass', function() {
+  return gulp.src('app/sass/*.sass')
+    .pipe(sass()).on('error', notify.onError())
+    .pipe(autoprefixer(['last 10 versions']))
+    .pipe(gulp.dest('app/css'));
+});
+
+gulp.task('clean', function() {
+  return del.sync('dist');
+});
+
+gulp.task('build', ['clean', 'sass'], function() {
+  gulp.src('app/*.html')
+    .pipe(useref())
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('dist'));
+
+  gulp.src('app/img/**/*').pipe(gulp.dest('dist/img'));
+
+  gulp.src('app/css/*.css')
+    .pipe(cleanCSS({ level: { 1: {
+      specialComments: 0
+    }}}))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('dist/css'));
+
+  gulp.src('app/js/main.js')
+    .pipe(babel({ presets: ['es2015'] }))
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('watch', ['sass', 'serve'], function() {
+  gulp.watch('app/*.html', reload);
+  gulp.watch('app/js/**/*.js', reload);
+  gulp.watch('app/sass/**/*.sass', ['sass', reload]);
 });
 
 gulp.task('default', ['watch']);

@@ -2,20 +2,22 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Barbershop</title>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <!-- build:css css/main.min.css -->
   <link rel="stylesheet" href="css/main.css">
+  <!-- endbuild -->
 </head>
 <body>
   <header class="header">
     <h1 class="visually-hidden">Барбершоп «Бородинский» — истинно мужская классика</h1>
     <div class="header__logo">
       <picture>
-        <source media="(min-width: 1200px)" srcset="images/logo-desktop.svg">
-        <source media="(min-width: 768px)" srcset="images/logo-tablet.svg">
-        <img src="images/logo.svg" alt="Барбершоп «Бородинский»">
+        <source media="(min-width: 1200px)" srcset="img/logo-desktop.svg">
+        <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+        <img src="img/logo.svg" alt="Барбершоп «Бородинский»">
       </picture>
     </div>
 
@@ -155,7 +157,7 @@
     <div class="footer__wrapper">
       <div class="contacts">
         <span class="contacts__title">Барбершоп «Бородинский»</span>
-        <p class="contacts__address">г. Санкт-Петербург, ул. Большsая Конюшенная 19/8</p>
+        <p class="contacts__address">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</p>
         <a class="contacts__tel button button--gray" href="tel:+79992223311"><span class="contacts__tel--hidden">Тел.:</span> +7 (999) 222-33-11</a>
       </div>
       <div class="social">
@@ -173,21 +175,8 @@
     </div>
   </footer>
 
-  <script>
-    let navMain = document.querySelector('.main-nav');
-    let navToggle = document.querySelector('.main-nav__toggle');
-
-    navMain.classList.remove('main-nav--nojs');
-
-    navToggle.addEventListener('click', function() {
-      if (navMain.classList.contains('main-nav--closed')) {
-        navMain.classList.remove('main-nav--closed');
-        navMain.classList.add('main-nav--opened');
-      } else {
-        navMain.classList.remove('main-nav--opened');
-        navMain.classList.add('main-nav--closed');
-      }
-    });
-  </script>
+  <!-- build:js js/main.min.js -->
+  <script src="js/main.js"></script>
+  <!-- endbuild -->
 </body>
 </html>
