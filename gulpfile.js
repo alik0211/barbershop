@@ -2,12 +2,12 @@ const del          = require('del'),
       gulp         = require('gulp'),
       sass         = require('gulp-sass'),
       babel        = require('gulp-babel'),
-      rename       = require('gulp-rename'),
       notify       = require('gulp-notify'),
+      rename       = require('gulp-rename'),
       uglify       = require('gulp-uglify'),
-      useref       = require('gulp-useref'),
       htmlmin      = require('gulp-htmlmin'),
       cleanCSS     = require('gulp-clean-css'),
+      htmlreplace  = require('gulp-html-replace'),
       browserSync  = require('browser-sync'),
       autoprefixer = require('gulp-autoprefixer');
 
@@ -46,24 +46,25 @@ gulp.task('clean', function() {
 
 gulp.task('build', ['clean', 'sass'], function() {
   gulp.src('app/*.html')
-    .pipe(useref())
+    .pipe(htmlreplace({
+      css: 'css/main.min.css',
+      js: 'js/main.min.js'
+    }))
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('dist'));
 
-  gulp.src('app/img/**/*').pipe(gulp.dest('dist/img'));
-
   gulp.src('app/css/*.css')
-    .pipe(cleanCSS({ level: { 1: {
-      specialComments: 0
-    }}}))
+    .pipe(cleanCSS({ level: { 1: { specialComments: 0 }}}))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist/css'));
 
-  gulp.src('app/js/main.js')
+  gulp.src('app/js/*.js')
     .pipe(babel({ presets: ['es2015'] }))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist/js'));
+
+  gulp.src('app/img/**/*').pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('watch', ['sass', 'serve'], function() {
