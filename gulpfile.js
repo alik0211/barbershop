@@ -28,7 +28,7 @@ gulp.task('serve:dist', ['build'], function() {
     server: {
       baseDir: 'dist'
     },
-    port: 9999,
+    port: 7780,
     notify: false
   });
 });

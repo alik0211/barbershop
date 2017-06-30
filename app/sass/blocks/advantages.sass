@@ -27,18 +27,8 @@
   line-height: 1.3
   text-align: center
   padding: 0 40px
-  padding-top: 90px
   background-repeat: no-repeat
   background-position: 50% 0
-
-  &:nth-child(1)
-    background-image: url(../img/advantage-1.svg)
-
-  &:nth-child(2)
-    background-image: url(../img/advantage-2.svg)
-
-  &:nth-child(3)
-    background-image: url(../img/advantage-3.svg)
 
 .advantages__title
   margin-bottom: 0
@@ -87,15 +77,17 @@
 
   .advantages__item
     display: flex
-    flex-direction: column
+    flex-direction: row
     padding: 0
-    padding-left: 120px
     border-bottom: 1px solid #4a4a4a
     text-align: left
     background-position: 0 50%
 
     &:last-child
       border-bottom: none
+
+  .advantages__text
+    margin-left: 35px
 
 @media (min-width: $desktop)
   .advantages::after
@@ -116,3 +108,6 @@
 
     &:last-child
       border-right: none
+
+  .advantages__text
+    margin-left: 0
