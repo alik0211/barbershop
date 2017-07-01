@@ -44,14 +44,14 @@
   color: #8c8c8c
   background-color: #353535
 
-@media (max-width: $mobile-only)
+@media #{$mobile-only}
   .stats__legend--top
     display: none
 
   .stats__item:nth-child(2n)
     background-color: #5b5b5b
 
-@media (min-width: $tablet)
+@media #{$tablet}
   .stats__wrapper
     @include container
 
@@ -127,7 +127,7 @@
     font-size: 20px
     text-align: left
 
-@media (min-width: $desktop)
+@media #{$desktop}
   .stats__wrapper
     margin-top: -165px
     display: flex

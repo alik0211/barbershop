@@ -13,7 +13,7 @@
 .contacts__tel--hidden
   display: none
 
-@media (min-width: $tablet)
+@media #{$tablet}
   .contacts
     display: inline-block
     order: 0
@@ -34,7 +34,7 @@
     &--hidden
       display: inline
 
-@media (min-width: $desktop)
+@media #{$desktop}
   .contacts
     order: 0
     width: auto

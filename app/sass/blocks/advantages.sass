@@ -42,7 +42,7 @@
 .advantages__input
   display: none
 
-@media (max-width: $mobile-only)
+@media #{$mobile-only}
   .advantages__toggle
     width: 25px
     height: 25px
@@ -70,7 +70,7 @@
       display: block
   /* Slider end */
 
-@media (min-width: $tablet)
+@media #{$tablet}
   .advantages__wrapper
     padding: 60px 0
     padding-bottom: 20px
@@ -89,7 +89,7 @@
   .advantages__text
     margin-left: 35px
 
-@media (min-width: $desktop)
+@media #{$desktop}
   .advantages::after
     height: 65px
 

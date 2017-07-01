@@ -139,7 +139,7 @@
 .main-nav__user-login:hover::before
   opacity: 1
 
-@media (max-width: $mobile-only)
+@media #{$mobile-only}
   .main-nav--closed .main-nav__item
     display: none
 
@@ -200,7 +200,7 @@
 
     background-color: #6a4d38
 
-@media (min-width: $tablet)
+@media #{$tablet}
   .main-nav
     width: auto
     margin: 0
@@ -249,7 +249,7 @@
   .main-nav__user-items
     font-size: 0
 
-@media (min-width: $desktop)
+@media #{$desktop}
   .main-nav__link
     padding: 12px 21px
 
