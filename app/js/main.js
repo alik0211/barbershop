@@ -1,8 +1,8 @@
 let navMain = document.querySelector('.main-nav');
-let navToggle = document.querySelector('.main-nav__toggle');
-let userLogin = document.querySelector('.main-nav__user-login');
+let navToggle = navMain.querySelector('.main-nav__toggle');
+let navLogin = navMain.querySelector('.main-nav__user-login');
 let loginForm = document.querySelector('.login-form');
-let loginFormClose = document.querySelector('.login-form__close');
+let loginFormClose = loginForm.querySelector('.login-form__close');
 
 navMain.classList.remove('main-nav--nojs');
 
@@ -16,7 +16,7 @@ navToggle.addEventListener('click', function() {
   }
 });
 
-userLogin.addEventListener('click', function() {
+navLogin.addEventListener('click', function() {
   loginForm.classList.add('login-form--opened');
 });
 
