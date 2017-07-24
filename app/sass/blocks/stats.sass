@@ -3,46 +3,46 @@
 
 .stats__header
   padding: 20px
-  text-align: center
-  color: #000
   background: #fff
+  color: #000
+  text-align: center
 
 .stats__slogan
+  text-transform: uppercase
   font-weight: 700
   font-size: 30px
-  text-transform: uppercase
 
 .stats__intro
   font-size: 20px
 
 .stats__items
-  border-collapse: collapse
   width: 100%
+  border-collapse: collapse
 
 .stats__item
-  color: #fff
   background-color: #353535
+  color: #fff
 
 .stats__value
-  width: 55%
   padding: 20px
   padding-right: 0
-  font-size: 40px
+  width: 55%
   font-weight: 700
+  font-size: 40px
 
 .stats__field
-  width: 45%
   padding: 18px
   padding-left: 0
+  width: 45%
   text-align: right
   font-size: 18px
 
 .stats__legend
   padding: 20px
+  background-color: #353535
+  color: #8c8c8c
   text-align: center
   font-size: 18px
-  color: #8c8c8c
-  background-color: #353535
 
 @media #{$mobile-only}
   .stats__legend--top
@@ -57,20 +57,20 @@
 
   .stats__header
     position: relative
-    min-height: 187px
-    margin-top: -187px
     display: flex
     flex-wrap: wrap
+    margin-top: -187px
     padding: 30px
+    min-height: 187px
 
     &::before
-      content: ""
       position: absolute
-      left: -30px
       top: 40px
+      left: -30px
       border: 15px solid transparent
       border-top: 15px solid #fff
       border-right: 15px solid #fff
+      content: ""
 
   .stats__slogan
     margin-bottom: 15px
@@ -80,21 +80,20 @@
     font-size: 40px
 
   .stats__intro
-    width: 50%
     margin: 0
     padding-top: 15px
     padding-right: 10px
     padding-left: 30px
-    font-size: 20px
+    width: 50%
     text-align: left
+    font-size: 20px
 
   .stats__legend--top
     padding: 0
-
     width: 50%
-    text-align: left
-    color: #b3b3b3
     background-color: #fff
+    color: #b3b3b3
+    text-align: left
 
   .stats__tbody
     display: flex
@@ -117,38 +116,38 @@
       display: none
 
   .stats__value
-    width: 100%
     padding: 0
+    width: 100%
     font-size: 72px
 
   .stats__field
-    width: 100%
     padding: 0
-    font-size: 20px
+    width: 100%
     text-align: left
+    font-size: 20px
 
 @media #{$desktop}
   .stats__wrapper
-    margin-top: -165px
     display: flex
+    margin-top: -165px
 
   .stats__header
-    margin-top: 0
     display: flex
     flex-direction: column
+    margin-top: 0
     width: 33.3%
 
   .stats__items
     width: 66.6%
 
   .stats__slogan
-    width: 100%
     margin-bottom: 30px
+    width: 100%
 
   .stats__intro
-    width: 100%
     padding: 0
+    width: 100%
 
   .stats__legend--top
-    width: 100%
     margin-top: auto
+    width: 100%

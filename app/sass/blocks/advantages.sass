@@ -6,14 +6,15 @@
 
   &::after
     position: absolute
-    content: ""
-    height: 40px
     width: 100%
+    height: 40px
     background-image: url(../img/corner-dark.svg)
     background-repeat: no-repeat
+    content: ""
 
 .advantages__wrapper
   @include container
+
   padding: 40px 0
   padding-bottom: 10px
 
@@ -23,17 +24,17 @@
   list-style: none
 
 .advantages__item
+  padding: 0 40px
+  background-position: 50% 0
+  background-repeat: no-repeat
+  text-align: center
   font-size: 20px
   line-height: 1.3
-  text-align: center
-  padding: 0 40px
-  background-repeat: no-repeat
-  background-position: 50% 0
 
 .advantages__title
   margin-bottom: 0
-  font-size: 32px
   text-transform: uppercase
+  font-size: 32px
 
 .advantages__toggles
   display: flex
@@ -44,12 +45,12 @@
 
 @media #{$mobile-only}
   .advantages__toggle
+    margin: 0 7%
     width: 25px
     height: 25px
-    margin: 0 7%
     border: 1px solid #fff
-    transform: rotate(45deg)
     cursor: pointer
+    transform: rotate(45deg)
 
     &:hover
       border-color: #826550
@@ -80,8 +81,8 @@
     flex-direction: row
     padding: 0
     border-bottom: 1px solid #4a4a4a
-    text-align: left
     background-position: 0 50%
+    text-align: left
 
     &:last-child
       border-bottom: none
@@ -100,11 +101,11 @@
     flex-direction: column
     padding: 0 60px
     padding-top: 90px
-    text-align: center
     width: 33.33%
-    border-bottom: none
     border-right: 1px solid #4a4a4a
+    border-bottom: none
     background-position: 50% 0
+    text-align: center
 
     &:last-child
       border-right: none

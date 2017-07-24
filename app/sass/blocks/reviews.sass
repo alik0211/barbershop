@@ -2,21 +2,22 @@
 @import "../mixins"
 
 .reviews
-  margin-bottom: 30px
   position: relative
+  margin-bottom: 30px
   background-color: #f9f5f2
   color: #000
 
   &::after
     position: absolute
-    content: ""
-    height: 40px
     width: 100%
+    height: 40px
     background-image: url(../img/corner-light.svg)
     background-repeat: no-repeat
+    content: ""
 
 .reviews__wrapper
   @include container
+  
   padding: 40px 0
   padding-bottom: 10px
 
@@ -24,11 +25,11 @@
   display: none
 
 .reviews__item
-  display: flex
   position: relative
-  min-height: 70px
-  padding: 15px 0
+  display: flex
   margin-left: 70px
+  padding: 15px 0
+  min-height: 70px
 
   &:nth-child(1) .reviews__author-photo
     background-image: url(../img/travis.jpg)
@@ -41,28 +42,28 @@
 
 .reviews__author-photo
   position: absolute
-  left: -70px
   top: 20px
+  left: -70px
   width: 50px
   height: 50px
   border: 1px solid #eae3dc
   background-position: 50% 0
-  background-repeat: no-repeat
   background-size: cover
+  background-repeat: no-repeat
 
 .reviews__author-name
-  font-size: 24px
-  font-style: normal
   font-weight: 700
+  font-style: normal
+  font-size: 24px
 
 .reviews__quote
   font-size: 18px
 
 .reviews__title
   margin-top: 0
-  font-size: 30px
   text-align: center
   text-transform: uppercase
+  font-size: 30px
 
 .reviews__toggles
   display: flex
@@ -72,12 +73,12 @@
   display: none
 
 .reviews__toggle
+  margin: 0 7%
   width: 25px
   height: 25px
-  margin: 0 7%
   border: 1px solid #000
-  transform: rotate(45deg)
   cursor: pointer
+  transform: rotate(45deg)
 
   &:hover
     border-color: #826550
@@ -111,10 +112,10 @@
     font-size: 40px
 
   .reviews__write
-    display: block
     position: absolute
     top: 60px
     right: 0
+    display: block
 
   .reviews__items
     margin-left: 0
@@ -130,11 +131,11 @@
 
   .reviews__toggles
     margin: 0 auto
-    text-align: center
+    margin-top: -12px
     width: 300px
     height: 40px
-    margin-top: -12px
     background-color: #f9f5f2
+    text-align: center
 
   .reviews__toggle
     margin: 0 30px
@@ -151,12 +152,12 @@
     padding-left: 150px
 
   .reviews__author-photo
-    left: -142px
     top: -17px
+    left: -142px
     width: 250px
     height: 160px
     border: none
+    border-color: transparent
     border-radius: 0
     border-top-right-radius: 40px 50%
     border-bottom-right-radius: 40px 50%
-    border-color: transparent
