@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg
+  width="50"
+  height="50"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  x="0px"
+  y="0px"
+  viewBox="0 0 25.5 49"
+  xml:space="preserve">
+<path fill="#ffffff" d="M16.5,49V26.7H24l1.1-8.7h-8.6v-5.6c0-2.5,0.7-4.2,4.3-4.2l4.6,0V0.3C24.7,0.2,21.9,0,18.7,0C12.1,0,7.5,4.1,7.5,11.5V18H0v8.7h7.5V49L16.5,49L16.5,49z"/>
+</svg>
