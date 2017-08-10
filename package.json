@@ -1,9 +1,10 @@
 {
   "name": "barbershop",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Барбершоп «Бородинский» — истинно мужская классика",
   "scripts": {
-    "start": "gulp watch"
+    "start": "gulp watch",
+    "build": "gulp build"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
