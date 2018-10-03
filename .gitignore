@@ -1,4 +1,5 @@
 node_modules
 app/css
 package-lock.json
+yarn.lock
 dist
