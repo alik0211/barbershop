@@ -1,5 +1,6 @@
 # Pokedex
 
+[![Travis](https://img.shields.io/travis/alik0211/barbershop/master.svg?style=flat-square)](https://travis-ci.org/alik0211/barbershop)
 [![devDependency Status](https://img.shields.io/david/dev/alik0211/barbershop.svg?label=devDeps&style=flat-square)](https://david-dm.org/alik0211/barbershop?type=dev)
 
 List of pokemons on the basis of React + Redux
