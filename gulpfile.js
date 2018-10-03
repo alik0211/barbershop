@@ -59,7 +59,7 @@ gulp.task('build', ['clean', 'sass'], function() {
     .pipe(gulp.dest('dist/css'));
 
   gulp.src('app/js/*.js')
-    .pipe(babel({ presets: ['es2015'] }))
+    .pipe(babel({ presets: ['@babel/env'] }))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist/js'));
