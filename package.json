@@ -18,7 +18,7 @@
     "gulp-htmlmin": "^3.0.0",
     "gulp-notify": "^3.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.0"
   },
   "repository": {
