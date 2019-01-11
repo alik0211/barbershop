@@ -36,8 +36,10 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('app/css'));
 });
 
-gulp.task('clean', function() {
-  return del.sync('dist');
+gulp.task('clean', function(cb) {
+  del.sync('dist');
+
+  cb();
 });
 
 gulp.task('prebuild', function(cb) {
