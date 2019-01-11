@@ -11,9 +11,13 @@ const del          = require('del'),
       browserSync  = require('browser-sync'),
       autoprefixer = require('gulp-autoprefixer');
 
-const reload = browserSync.reload;
+gulp.task('reload', function(cb) {
+  browserSync.reload();
 
-gulp.task('serve', function() {
+  cb();
+});
+
+gulp.task('serve', function(cb) {
   browserSync({
     server: {
       baseDir: 'app'
@@ -21,16 +25,8 @@ gulp.task('serve', function() {
     port: 7779,
     notify: false
   });
-});
 
-gulp.task('serve:dist', ['build'], function() {
-  browserSync({
-    server: {
-      baseDir: 'dist'
-    },
-    port: 7780,
-    notify: false
-  });
+  cb();
 });
 
 gulp.task('sass', function() {
@@ -44,7 +40,7 @@ gulp.task('clean', function() {
   return del.sync('dist');
 });
 
-gulp.task('build', ['clean', 'sass'], function() {
+gulp.task('prebuild', function(cb) {
   gulp.src('app/*.html')
     .pipe(htmlreplace({
       css: 'css/main.min.css',
@@ -65,12 +61,18 @@ gulp.task('build', ['clean', 'sass'], function() {
     .pipe(gulp.dest('dist/js'));
 
   gulp.src('app/img/**/*').pipe(gulp.dest('dist/img'));
+
+  cb();
 });
 
-gulp.task('watch', ['sass', 'serve'], function() {
-  gulp.watch('app/*.html', reload);
-  gulp.watch('app/js/**/*.js', reload);
-  gulp.watch('app/sass/**/*.sass', ['sass', reload]);
+gulp.task('watch', function(cb) {
+  gulp.watch('app/*.html', gulp.series('reload'));
+  gulp.watch('app/js/**/*.js', gulp.series('reload'));
+  gulp.watch('app/sass/**/*.sass', gulp.series('sass', 'reload'));
+
+  cb();
 });
 
-gulp.task('default', ['watch']);
+gulp.task('build', gulp.series('clean', 'sass', 'prebuild'));
+
+gulp.task('default', gulp.series('sass', 'serve', 'watch'));
